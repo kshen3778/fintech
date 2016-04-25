@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html ng-app="starter">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl7OTq1GpkLs_GeoRtPZDox7_jGEziIag">
+        </script>
+        <script src="lib/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+        <script src="lib/lodash/dist/lodash.min.js"></script>
+        <script src="lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/app.js"></script>
+    </head>
+    <body ng-controller="mapCtrl">
+        
+        <style>
+        .angular-google-map-container { height: 95vh; overflow-y: none;}
+        </style>
+        
+        
+        
+        <ons-sliding-menu swipeable="false" var="slidingMenu" menu-page="menu.html" main-page="map.html" side="left" type="overlay" max-slide-distance="200px">
+        </ons-sliding-menu>
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" id="map">
+           <ui-gmap-markers models="markers" coords="&apos;self&apos;" icon="&apos;icon&apos;">
+               <ui-gmap-windows show="show">
+                   <div ng-non-bindable="">{{markers.id + models.id}}</div>
+            </ui-gmap-windows>
+           </ui-gmap-markers>
+        </ui-gmap-google-map>
+        
+        <!--we can make the button automatically insert the stuff into the database-->
+        <!--<button class="button" style="position: fixed; top: 20px; left: 150px; border-radius: 2px; border: 1px solid black; background-color: #DADFE1; cursor: pointer; height: 30px; padding-left: 5px; padding-right: 5px; padding-top: -1px;">
+            Report an Asain Carp Sighting
+        </button>-->
+        
+    </body>
+</html>
